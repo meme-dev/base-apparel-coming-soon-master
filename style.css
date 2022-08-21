@@ -1,0 +1,184 @@
+/* CSS reset */ 
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  /*
+    2. Remove default margin
+  */
+  * {
+    margin: 0;
+  }
+  /*
+    3. Allow percentage-based heights in the application
+  */
+  html, body {
+    height: 100%;
+  }
+  /*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  /*
+    6. Improve media defaults
+  */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  /*
+    7. Remove built-in form typography styles
+  */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  /*
+    8. Avoid text overflows
+  */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+  :root {
+    /* Colors*/
+
+    /*Primary*/
+
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+
+    /*Neutral*/
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --opacity: 0.5;
+    --shadow: rgba(var(--Dark-Grayish-Red), 0.8);  
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+  }
+  main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 1440px;
+  }
+  .left {
+    background-color: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    background-image: url('/images/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    padding: 66px 240px 66px 161px;
+
+  }
+  .right {
+    background-image: url('images/hero-desktop.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  nav img {
+    padding-bottom: 134px;
+  }
+  h1 {
+    font-size: 66px;
+    color: var(--Dark-Grayish-Red);
+    text-transform: uppercase;
+    line-height: 1.08;
+    letter-spacing: 16px;
+    padding-bottom: 20px;
+  }
+  h1 span{
+    color: var(--Desaturated-Red);
+    font-weight: 300;
+    letter-spacing: 16.5px;
+  }
+  p {
+    padding-bottom: 36px;
+    line-height: 1.7;
+    color: var(--Desaturated-Red);
+  }
+  form {
+    display: flex;
+    align-items: center;
+  }
+  input {
+    background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    width: 100%;
+    padding:14px;
+    border-radius: 25px;
+    border: 1px solid var(--Desaturated-Red)
+  }
+  input[type=email] {
+    padding-left: 32px;
+    color: var(--Dark-Grayish-Red);
+    
+  }
+  input[type=email]:focus{
+    outline: none;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    padding: 18px;
+    border-radius: 30px;
+    width: 110px;
+    margin-left:-55px;
+    cursor: pointer;
+    box-shadow: 0 15px 10px var(--shadow);
+  }
+  .button:hover {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 90%));
+  }
+  @media only screen and (max-width: 600px) {
+    main {
+      width: 100%;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+    .right {
+      height: 350px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background: url('images/hero-mobile.jpg');
+    }
+    .left {
+      width: 100%;
+      padding: 0;
+    }
+    h1 {
+      font-size: 26px;
+      text-align: center;
+      padding-top: 32px;
+    }
+    nav {
+      display: none;
+      padding-bottom: 32px;
+    }
+    p {
+      padding: 32px;
+    }
+    form {
+      padding: 32px;
+    }
+}
